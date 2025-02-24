@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages with Basic Auth
+
+on:
+  push:
+    branches:
+      - main  # Zmień na swoją główną gałąź
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup basic authentication
+        run: |
+          mkdir -p ./public
+          echo "AuthType Basic" > ./public/.htaccess
+          echo "AuthName 'Restricted Access'" >> ./public/.htaccess
+          echo "AuthUserFile /etc/apache2/.htpasswd" >> ./public/.htaccess
+          echo "Require valid-user" >> ./public/.htaccess
+          echo "user:$apr1$y1HR3VfA$1T8Fz5VQX9fMB/3cB0s4U1" > ./public/.htpasswd
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
