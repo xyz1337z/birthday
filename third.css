@@ -1,0 +1,97 @@
+/* Styl dla strony życzeń */
+.wishes-page {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+    max-width: 600px;
+}
+
+/* Animacja wejścia */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Nagłówek */
+.title {
+    font-size: 2em;
+    color: #d6336c;
+    margin-bottom: 20px;
+}
+
+/* Życzenia */
+.message {
+    font-size: 1.2em;
+    color: #444;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* Ramka na zdjęcie */
+.photo-frame {
+    margin: 20px auto;
+    padding: 10px;
+    border: 6px solid #ff6f91;
+    border-radius: 15px;
+    background: white;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Kokardki w rogach */
+.photo-frame::before, .photo-frame::after {
+    content: "🎀";
+    font-size: 2em;
+    position: absolute;
+}
+
+.photo-frame::before {
+    top: -20px;
+    left: -20px;
+}
+
+.photo-frame::after {
+    top: -20px;
+    right: -20px;
+}
+
+/* Zdjęcie */
+.photo {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Przycisk */
+.button {
+    display: inline-block;
+    background: #ff6f91;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 110, 145, 0.5);
+}
+
+.button:hover {
+    background: #ff3e70;
+    transform: scale(1.1);
+}

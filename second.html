@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niespodzianka! 🎉</title>
+    <link rel="stylesheet" href="second.css">
+    <link rel="stylesheet" href="miniGra2.css">
+    <link rel="stylesheet" href="miniGra3.css">
+    <link rel="stylesheet" href="miniGra4.css">
+    <link rel="stylesheet" href="miniGra5.css">
+    <link rel="stylesheet" href="miniGra6.css">
+    
+    <script defer src="script.js"></script>
+    <script defer src="scriptMiniGra1.js"></script>
+    <script defer src="scriptMiniGra2.js"></script>
+    <script defer src="scriptMiniGra3.js"></script>
+    <script defer src="scriptMiniGra4.js"></script>
+    <script defer src="scriptMiniGra5.js"></script>
+    <script defer src="scriptMiniGra6.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0"></script>
+   
+</head>
+<body class="second-page">
+
+    <div class="container">
+        <h1 class="page-title">🎀Czas na Twoją niespodziankę!🎀</h1>
+            <p1 class="subtitle"></p1>
+
+        <!-- Kotek GIF -->
+        <div class="gif-container">
+            <img src="https://media1.tenor.com/m/I2bG_dnz46EAAAAC/cat-wave.gif" class="gif" alt="Kotek machający łapką">
+        </div>
+
+        <!-- Siatka podpowiedzi -->
+        <div class="hints-grid">
+            <div class="hint locked" id="hint1">
+                <p>🔒 Podpowiedź 1</p>
+                <p class="countdown" id="timer1">⏳ Odblokowanie za: --:--:--</p>
+            </div>
+            <div class="hint locked" id="hint2">
+                <p>🔒 Podpowiedź 2</p>
+                <p class="countdown" id="timer2">⏳ Odblokowanie za: --:--:--</p>
+            </div>
+            <div class="hint locked" id="hint3">
+                <p>🔒 Podpowiedź 3</p>
+                <p class="countdown" id="timer3">⏳ Odblokowanie za: --:--:--</p>
+            </div>
+            <div class="hint locked" id="hint4">
+                <p>🔒 Podpowiedź 4</p>
+                <p class="countdown" id="timer4">⏳ Odblokowanie za: --:--:--</p>
+            </div>
+            <div class="hint locked" id="hint5">
+                <p>🔒 Podpowiedź 5</p>
+                <p class="countdown" id="timer5">⏳ Odblokowanie za: --:--:--</p>
+            </div>
+            <div class="hint locked" id="hint6">
+                <p>🔒 Podpowiedź 6</p>
+                <p class="countdown" id="timer6">⏳ Odblokowanie za: --:--:--</p>
+            </div>
+        </div>
+
+    
+
+        <!-- Powrót -->
+        <a href="index.html" class="back-button">⬅️ Powrót</a>
+    </div>
+
+    <!-- Animowane serduszka w tle -->
+    <div class="floating-hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <!-- Latający kotek w samolocie -->
+    <div class="flying-cat">
+    <img src="assets/output-onlinegiftools.gif" alt="Kotek w samolocie">
+    </div>
+
+    
+
+<!-- Okno modalne do mini gry 1 -->
+<div id="gameModal" class="modal">
+    <div class="modal-content">
+        <h2>Zaznacz poprawną odpowiedź!!🧠</h2>
+        <p id="gameQuestion"></p>
+        <div id="answerButtons" class="answer-buttons"></div>
+        <p id="feedbackMessage" class="hidden"></p> <!-- Tutaj pojawi się info o błędzie -->
+        <button id="closeModal">❌ Zamknij</button>
+    </div>
+</div>
+
+
+<!-- Okno modalne do mini gry 2 -->
+<div id="gameModal2" class="modal">
+    <div class="modal-content">
+        <h2>🐱 Złap kotki do koszyka! 🧺</h2>
+        <p>Poruszaj się strzałkami lewo i prawo, aby złapać 15 kotków!</p>
+        <div id="gameArea"></div>
+        <p id="score">Punkty: 0/5</p>
+        <button id="restartGame">🔄 Zagraj ponownie</button> <!-- PRZYCISK JUŻ JEST W HTML -->
+        <button id="closeModal2">❌ Zamknij</button>
+    </div>
+</div>
+
+<!-- Okno modalne do mini gry 3 -->
+<div id="gameModal3" class="modal">
+    <div class="modal-content">
+        <h2>Pamiec złotej rypki?? Check it out!🙌</h2>
+        <p id="statusMessage">Znajdź wszystkie pary!</p>
+        <div id="gameBoard" class="game-board"></div>
+        <button id="restartGame3">🔄 Zagraj ponownie</button>
+        <button id="closeModal3">❌ Zamknij</button>
+    </div>
+</div>
+
+<!-- Okno modalne do mini gry 4 -->
+<div id="gameModal4" class="modal">
+    <div class="modal-content photo-modal-content">
+        <h2>What the hell?? Z jakiego miasta/miejsca jest ta cute fotka pamietasz?</h2> <h3>Pamietasz nie??💕</h3>
+        <div id="photoContainer"></div>
+        <p id="photoCounter" class="photo-counter">Zdjęcie 1/8</p>
+        <p class="photo-description">Wpisz miasto, w którym zrobiono zdjęcie:</p>
+        <input type="text" id="cityInput" placeholder="" />
+        <button id="checkCityButton">✔️ Sprawdź</button>
+        <p id="messageDisplay"></p>
+        <button id="closeModal4">❌ Zamknij</button>
+    </div>
+</div>
+
+<!-- Okno modalne do mini gry 5 -->
+<div id="gameModal5" class="modal">
+    <div class="modal-content">
+        <h2>Teraz skupka - zbierz 15 złotych gwiazdek⭐🏃‍♂️</h2>
+        <canvas id="gameCanvas5"></canvas>
+        <p id="gameScore5">Punkty: <span id="score5">0</span> </p>
+        <button id="closeModal5">❌ Zamknij</button>
+    </div>
+</div>
+
+
+<!-- Okno modalne do mini gry 6 -->
+<div id="gameModal6" class="modal">
+    <div class="modal-content">
+        <h2>🏹 Strzał w Dziesiątkę!</h2>
+        <p>Masz 5 prób, aby trafić w środek tarczy!</p>
+        <canvas id="gameCanvas6" width="400" height="250"></canvas>
+        <p id="score6">Próby: 5/5</p>
+        <button id="shootButton">🎯 Strzel</button>
+        <button id="closeModal6">❌ Zamknij</button>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

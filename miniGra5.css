@@ -1,0 +1,12 @@
+#gameCanvas {
+    border: 3px solid #333;
+    background-color: #f0f0f0;
+    display: block;
+    margin: 10px auto;
+}
+
+#gameMessage {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
