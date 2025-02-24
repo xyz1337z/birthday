@@ -1,0 +1,312 @@
+/* --- Podstawowe ustawienia strony --- */
+.second-page {
+    background: linear-gradient(135deg, #f7d9e3, #e3a8f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    padding-top: 50px; /* Dodaje przestrzeń nad nagłówkiem */
+}
+
+/* --- Kontener główny --- */
+.container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 700px;
+}
+
+/* --- GIF --- */
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gif-container:hover {
+    transform: scale(1.1);
+}
+
+/* --- Podpowiedzi --- */
+.hints {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hints-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* --- Wygląd podpowiedzi --- */
+.hint {
+    background: linear-gradient(135deg, #ff87d1, #ff5fbf);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.2em;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 90, 180, 0.3);
+}
+
+.hint:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 90, 180, 0.5);
+}
+
+.hint.locked {
+    background-color: #ccc;
+    color: #777;
+    pointer-events: none;
+}
+
+.hint:not(.locked):hover {
+    background-color: #ffeb3b;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hint-image {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+
+/* --- Licznik odblokowania --- */
+.countdown {
+    font-size: 0.9em;
+    color: white;
+}
+
+/* --- Powrót --- */
+.back-button {
+    background: #ff5fbf;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background: #ff3eaf;
+}
+
+/* --- Latający kotek w samolocie --- */
+.flying-cat {
+    position: absolute;
+    top: 5%; /* Pozycja nad głównym napisem */
+    right: -150px; /* Start poza ekranem po PRAWEJ stronie */
+    width: 120px; /* Poprawiony rozmiar */
+    height: auto;
+    animation: flyReverse 12s linear infinite;
+}
+
+/* Dopasowanie tła GIF-a do strony */
+.flying-cat img {
+    width: 100%;
+    height: auto;
+  
+    border-radius: 50%; /* Możemy dodać lekki efekt zaokrąglenia */
+    filter: brightness(1.1) contrast(1.1); /* Poprawienie kolorów */
+}
+
+/* Animacja przelotu w ODWROTNĄ stronę */
+@keyframes flyReverse {
+    0% { right: -150px; transform: scaleX(1); } /* Start poza ekranem */
+    100% { right: 110%; transform: scaleX(1); } /* Przelot w lewo + odbicie poziome */
+}
+
+/* === POPRAWKA: Przesunięcie samolotu wyżej na drugiej stronie === */
+.second-page .flying-cat {
+    top: -0.5%; /* Podnieś samolot wyżej */
+}
+
+/* --- ANIMOWANE SERDUSZKA W TLE --- */
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Serduszko */
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff5fbf;
+    transform: rotate(-45deg);
+    animation: floatUp 6s infinite ease-in-out;
+}
+
+/* Tworzymy prawdziwe serduszka */
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff5fbf;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -12px;
+    left: 0;
+}
+
+.heart::after {
+    left: 12px;
+    top: 0;
+}
+
+/* Pozycjonowanie serduszek na różnych wysokościach */
+.heart:nth-child(1) { left: 10%; bottom: -10%; animation-duration: 4s; }
+.heart:nth-child(2) { left: 30%; bottom: -15%; animation-duration: 5s; }
+.heart:nth-child(3) { left: 50%; bottom: -20%; animation-duration: 6s; }
+.heart:nth-child(4) { left: 70%; bottom: -10%; animation-duration: 7s; }
+.heart:nth-child(5) { left: 90%; bottom: -5%; animation-duration: 6.5s; }
+.heart:nth-child(6) { left: 15%; bottom: -25%; animation-duration: 5.5s; }
+.heart:nth-child(7) { left: 55%; bottom: -30%; animation-duration: 6.2s; }
+
+/* Animacja unoszenia */
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1) rotate(-45deg); opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5) rotate(-45deg); opacity: 0; }
+}
+
+/* === ZMIANA KURSORA NA KAWAII STRAWBERRY COW 🐮🍓 === */
+body {
+    cursor: url('https://cdn.custom-cursor.com/db/20074/32/kawaii-cat-ghost-cursor.png') 32 32, auto;
+}
+
+/* Ustawienie kursora na wskaźnik (np. na linki, przyciski) */
+a, button, .hint {
+    cursor: url('https://cdn.custom-cursor.com/db/18024/32/kawaii-strawberry-cow-strawberries-cursor.png') 32 32, pointer;
+}
+
+/* Styl dla modala */
+.modal {
+    display: none; /* Domyślnie ukryte */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#gameAnswer {
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+#submitAnswer, #closeModal {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#submitAnswer {
+    background: #4CAF50;
+    color: white;
+}
+
+#submitAnswer:hover {
+    background: #45a049;
+}
+
+#closeModal {
+    background: #ff3e3e;
+    color: white;
+}
+
+#closeModal:hover {
+    background: #d32f2f;
+}
+
+.answer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.answer-button {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.answer-button:hover {
+    background-color: #f0f0f0;
+}
+
+.correct {
+    background-color: #4CAF50 !important;
+    color: white;
+}
+
+.wrong {
+    background-color: #FF4C4C !important;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#feedbackMessage {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}

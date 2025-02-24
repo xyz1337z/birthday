@@ -1,0 +1,106 @@
+.photo-image-large {
+    max-width: 90%;
+    max-height: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.input-error {
+    border: 2px solid red;
+    background-color: #ffd6d6;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+    100% { transform: translateX(0); }
+}
+
+
+
+.photo-image-large {
+    max-width: 100%;
+    max-height: 500px; /* Przywrócona większa wysokość */
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photo-counter {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.photo-description {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#cityInput {
+    padding: 10px;
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+#checkCityButton {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    margin-top: 5px;
+}
+
+#checkCityButton:hover {
+    background: linear-gradient(135deg, #ff5e98, #ff3d7e);
+}
+
+#closeModal4 {
+    background: #ccc;
+    color: #333;
+    border: none;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#closeModal4:hover {
+    background: #bbb;
+}
+

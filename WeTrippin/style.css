@@ -1,0 +1,200 @@
+/* --- STRONA POWITALNA --- */
+.welcome-page {
+    background: linear-gradient(135deg, #f7d9e3, #e3a8f7);
+    background-size: 200% 200%;
+    animation: shimmer 6s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+/* Efekt błyszczenia tła */
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Kontener główny */
+.intro-container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Tekst powitalny */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Powiększony GIF */
+.welcome-gif {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Przycisk poniżej GIF-a */
+button {
+    background: linear-gradient(135deg, #ff87d1, #ff5fbf);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(255, 133, 200, 0.5);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff5fbf, #ff3eaf);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 90, 180, 0.7);
+}
+
+/* --- ANIMOWANE SERDUSZKA W TLE --- */
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Serduszko */
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff5fbf;
+    transform: rotate(-45deg);
+    animation: floatUp 6s infinite ease-in-out;
+}
+
+/* Tworzymy prawdziwe serduszka */
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff5fbf;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -12px;
+    left: 0;
+}
+
+.heart::after {
+    left: 12px;
+    top: 0;
+}
+
+/* Pozycjonowanie serduszek na różnych wysokościach */
+.heart:nth-child(1) { left: 10%; bottom: -10%; animation-duration: 4s; }
+.heart:nth-child(2) { left: 30%; bottom: -15%; animation-duration: 5s; }
+.heart:nth-child(3) { left: 50%; bottom: -20%; animation-duration: 6s; }
+.heart:nth-child(4) { left: 70%; bottom: -10%; animation-duration: 7s; }
+.heart:nth-child(5) { left: 90%; bottom: -5%; animation-duration: 6.5s; }
+.heart:nth-child(6) { left: 15%; bottom: -25%; animation-duration: 5.5s; }
+.heart:nth-child(7) { left: 55%; bottom: -30%; animation-duration: 6.2s; }
+
+/* Animacja unoszenia */
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1) rotate(-45deg); opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5) rotate(-45deg); opacity: 0; }
+}
+
+/* --- Kotki wokół centralnej części strony --- */
+.decorative-cats {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.cat {
+    position: absolute;
+    width: 80px; /* Rozmiar GIF-a */
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Pozycjonowanie kotków wokół środkowej sekcji */
+.top-left {
+    top: 10%;
+    left: 10%;
+}
+
+.top-right {
+    top: 10%;
+    right: 10%;
+}
+
+.bottom-left {
+    bottom: 10%;
+    left: 10%;
+}
+
+.bottom-right {
+    bottom: 10%;
+    right: 10%;
+}
+
+/* --- Latający kotek w samolocie --- */
+.flying-cat {
+    position: absolute;
+    top: 5%; /* Pozycja nad głównym napisem */
+    right: -150px; /* Start poza ekranem po PRAWEJ stronie */
+    width: 120px; /* Poprawiony rozmiar */
+    height: auto;
+    animation: flyReverse 12s linear infinite;
+}
+
+/* Dopasowanie tła GIF-a do strony */
+.flying-cat img {
+    width: 100%;
+    height: auto;
+  
+    border-radius: 50%; /* Możemy dodać lekki efekt zaokrąglenia */
+    filter: brightness(1.1) contrast(1.1); /* Poprawienie kolorów */
+}
+
+/* Animacja przelotu w ODWROTNĄ stronę */
+@keyframes flyReverse {
+    0% { right: -150px; transform: scaleX(1); } /* Start poza ekranem */
+    100% { right: 110%; transform: scaleX(1); } /* Przelot w lewo + odbicie poziome */
+}
+
+
+
+/* === ZMIANA KURSORA NA KAWAII STRAWBERRY COW 🐮🍓 === */
+body {
+    cursor: url('https://cdn.custom-cursor.com/db/20074/32/kawaii-cat-ghost-cursor.png') 32 32, auto;
+}
+
+/* Ustawienie kursora na wskaźnik (np. na linki, przyciski) */
+a, button, .hint {
+    cursor: url('https://cdn.custom-cursor.com/db/18024/32/kawaii-strawberry-cow-strawberries-cursor.png') 32 32, pointer;
+}
+
