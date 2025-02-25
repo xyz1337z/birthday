@@ -4,21 +4,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* 🛠️ Zapewnia pełną wysokość */
+    min-height: 100vh; /* 🛠️ Zmiana na min-height, żeby zapobiec ucięciu */
     text-align: center;
     font-family: "Poppins", sans-serif;
-    padding: 20px;
+    padding: 40px 20px; /* Więcej miejsca na treść */
+    box-sizing: border-box;
+    overflow-y: auto; /* Zapobiega ucinaniu treści */
 }
 
 /* Kontener */
 .container {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1.5s ease-in-out;
-    max-width: 600px;
-    width: 90%; /* 📱 Responsywność */
+    max-width: 650px;
+    width: 100%;
 }
 
 /* Animacja wejścia */
@@ -29,31 +31,35 @@
 
 /* Nagłówek */
 .title {
-    font-size: 2em;
+    font-size: 2.2em;
     color: #d6336c;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Tekst życzeń */
 .message {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #444;
-    line-height: 1.6;
+    line-height: 1.7;
     font-weight: bold;
     text-align: justify;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* Ramka na zdjęcie */
 .photo-frame {
-    margin: 15px auto;
+    margin: 20px auto;
     padding: 10px;
     border: 6px solid #ff6f91;
     border-radius: 15px;
     background: white;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    max-width: 320px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Kokardki w rogach */
@@ -64,19 +70,19 @@
 }
 
 .photo-frame::before {
-    top: -20px;
-    left: -20px;
+    top: -15px;
+    left: -15px;
 }
 
 .photo-frame::after {
-    top: -20px;
-    right: -20px;
+    top: -15px;
+    right: -15px;
 }
 
 /* Zdjęcie */
 .photo {
     width: 100%;
-    max-width: 280px; /* 📱 Lepsze dopasowanie na telefonach */
+    max-width: 280px;
     height: auto;
     border-radius: 10px;
     display: block;
@@ -87,11 +93,11 @@
     display: inline-block;
     background: #ff6f91;
     color: white;
-    padding: 12px 20px;
+    padding: 14px 22px;
     border-radius: 12px;
     text-decoration: none;
-    font-size: 1.2em;
-    margin-top: 20px;
+    font-size: 1.3em;
+    margin-top: 25px;
     transition: 0.3s ease-in-out;
     box-shadow: 0 4px 10px rgba(255, 110, 145, 0.5);
 }
@@ -102,22 +108,26 @@
 }
 
 /* 📱 **Dostosowanie do ekranów mobilnych** */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .title {
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
 
     .message {
-        font-size: 1em;
+        font-size: 1.05em;
         text-align: left;
     }
 
+    .photo-frame {
+        max-width: 250px;
+    }
+
     .photo {
-        max-width: 240px;
+        max-width: 230px;
     }
 
     .button {
-        font-size: 1em;
-        padding: 10px 15px;
+        font-size: 1.1em;
+        padding: 12px 18px;
     }
 }
