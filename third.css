@@ -4,19 +4,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* 🛠️ Zapewnia pełną wysokość */
     text-align: center;
     font-family: "Poppins", sans-serif;
     padding: 20px;
 }
 
+/* Kontener */
 .container {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1.5s ease-in-out;
     max-width: 600px;
+    width: 90%; /* 📱 Responsywność */
 }
 
 /* Animacja wejścia */
@@ -29,20 +31,22 @@
 .title {
     font-size: 2em;
     color: #d6336c;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-/* Życzenia */
+/* Tekst życzeń */
 .message {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #444;
     line-height: 1.6;
     font-weight: bold;
+    text-align: justify;
+    margin-bottom: 20px;
 }
 
 /* Ramka na zdjęcie */
 .photo-frame {
-    margin: 20px auto;
+    margin: 15px auto;
     padding: 10px;
     border: 6px solid #ff6f91;
     border-radius: 15px;
@@ -71,7 +75,8 @@
 
 /* Zdjęcie */
 .photo {
-    width: 250px;
+    width: 100%;
+    max-width: 280px; /* 📱 Lepsze dopasowanie na telefonach */
     height: auto;
     border-radius: 10px;
     display: block;
@@ -94,4 +99,25 @@
 .button:hover {
     background: #ff3e70;
     transform: scale(1.1);
+}
+
+/* 📱 **Dostosowanie do ekranów mobilnych** */
+@media (max-width: 500px) {
+    .title {
+        font-size: 1.6em;
+    }
+
+    .message {
+        font-size: 1em;
+        text-align: left;
+    }
+
+    .photo {
+        max-width: 240px;
+    }
+
+    .button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
 }
