@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { src: 'assets/comino.jpeg', city: 'Comino' },
         { src: 'assets/dingli_klify.jpeg', city: 'Dingli Cliffs' },
         { src: 'assets/haga.jpeg', city: 'Haga' },
-        { src: 'assets/korfu.jpeg', city: 'Korfu' },
+        { src: 'assets/Korfu.jpeg', city: 'Korfu' },
         { src: 'assets/dolina_motyli.jpeg', city: 'Dolina motyli' },
         { src: 'assets/luzino.jpeg', city: 'Luzino' },
         { src: 'assets/rodos.jpeg', city: 'Rodos' }
