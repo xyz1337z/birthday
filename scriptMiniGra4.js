@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { src: 'assets/dolina_motyli.jpeg', city: 'Dolina motyli' },
         { src: 'assets/luzino.jpeg', city: 'Luzino' },
         { src: 'assets/rodos.jpeg', city: 'Rodos' }
-        { src: 'assets/ustronie.jpeg', city: 'Ustronie Morskie' }
+        { src: 'assets/ustronie.png', city: 'Ustronie Morskie' }
     ];
 
     function loadHints() {
